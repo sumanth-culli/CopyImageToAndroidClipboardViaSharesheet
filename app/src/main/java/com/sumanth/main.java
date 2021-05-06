@@ -18,8 +18,10 @@ public class main extends Activity
             try{
                 mClipboardManager.setPrimaryClip(ClipData.newUri(getContentResolver(),"text",extras.getParcelable(Intent.EXTRA_STREAM)));
                 Toast.makeText(this, "Copied image to clipboard", Toast.LENGTH_SHORT).show();
-            } catch (Exception e){}
+            } catch (Exception e){
+                Toast.makeText(this, "Error occurred", Toast.LENGTH_SHORT).show();
+            }
         }
-    this.finish();
+        this.finish();
     }
 }
